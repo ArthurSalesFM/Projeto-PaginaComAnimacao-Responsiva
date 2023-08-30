@@ -1,0 +1,195 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: hidden;
+    background-image: radial-gradient(ellipse at 0 0, #fff8ce, #ffb61d);
+}
+
+#wrapper{
+    width: 90%;
+    max-width: 83.75rem;
+    margin: auto;
+}
+
+header{
+    padding: 3.125rem 0;
+}
+
+h1{
+    font-size: 4.125rem;
+}
+
+h1 strong{
+    color: red;
+    text-transform: uppercase;
+}
+
+main{
+    display: flex;
+    gap: 2rem;
+}
+
+/*Todo elemento que é filho direto de main*/
+main > *{
+    /*flex-grow: 1;
+    flex-basis: 0;*/
+
+    /*grow shrink basis*/
+    /*Deixando os filhos direto de um flex-container com a mesma largura*/
+    flex: 1 0 0;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+p{
+    font-weight: 300;
+}
+
+form{
+    display: flex;
+    gap: 1rem;
+}
+
+form input{
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    border: 1px solid #28293e;
+    outline: none;
+}
+
+form input[type="submit"]{
+    background-color: #031d44;
+    color: white;
+}
+
+form input[type="submit"]:hover{
+    background-color: #053680;
+    color: white;
+}
+
+form input[type="text"]{
+    background-color: transparent;
+}
+
+form input[type="text"]::placeholder{
+    color: #28293e;
+}
+
+.animation{
+    position: relative;
+}
+
+.animation img{
+    position: absolute;
+}
+
+.animation img:nth-child(1){
+    left: 10px;
+    top: 150px;
+    animation: topleft 2s infinite alternate;
+}
+
+.animation img:nth-child(2){
+    right: 10px;
+    top: 20px;
+    animation: topleft 3s .5s infinite alternate;
+}
+
+.animation img:nth-child(3){
+    right: 0;
+    top: 0;
+    animation: topleft 3.5s .5s infinite alternate;
+}
+
+.animation img:nth-child(4){
+    left: 100px;
+    bottom: -100px;
+    animation: topleft 4s .5s infinite alternate;
+}
+
+.animation img:nth-child(5){
+    left: 100px;
+    top: -100px;
+    animation: topleft 3s infinite alternate;
+}
+
+.animation img:nth-child(6){
+    right: 100px;
+    bottom: -100px;
+    animation: topleft 4s infinite alternate;
+}
+
+@keyframes topleft{
+    from{
+        transform: translate(0, 0);
+    }
+
+    to{
+        transform: translate(-10px, -30px);
+    }
+}
+
+@media screen and (max-width: 50rem){
+    
+    body{
+        overflow-y: scroll;
+        background-image: radial-gradient(#fff8ce, #ffb61d);
+    }
+
+    h1{
+        font-size: 3.125rem;
+    }
+
+    section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animation img:nth-child(1){
+        left: 10px;
+        top: 400px;
+        animation: topleft 2s infinite alternate;
+    }
+    
+    .animation img:nth-child(2){
+        right: 100px;
+        top: 320px;
+        animation: topleft 3s .5s infinite alternate;
+    }
+    
+    .animation img:nth-child(3){
+        left: -250px;
+        top: -10px;
+        animation: topleft 3.5s .5s infinite alternate;
+    }
+    
+    .animation img:nth-child(4){
+        left: 100px;
+        bottom: -350px;
+        animation: topleft 4s .5s infinite alternate;
+    }
+    
+    .animation img:nth-child(5){
+        left: -100px;
+        top: -20px;
+        animation: topleft 3s infinite alternate;
+    }
+    
+    .animation img:nth-child(6){
+        right: 100px;
+        bottom: -200px;
+        animation: topleft 4s infinite alternate;
+    }
+
+}
